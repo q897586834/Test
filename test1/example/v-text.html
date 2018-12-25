@@ -5,16 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script type="text/javascript" src="../assets/js/vue.min.js"></script>
-    <title>Document</title>
+    <title>v-test && v-html 实例</title>
 </head>
 <body>
+  <h1>v-test && v-html 实例</h1>
 <div id="app">
-  <h1>v-</h1>
+  <span v-html="dodo"></span>
+  <span v-text="message"></span>
   <script>
     var app = new Vue({
       el:'#app',
       data:{
-        message:'hello world'
+        message:'hello world',
+        dodo:'<h2>hello world</h2>'
       }
     })  
   </script>
