@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="../assets/js/vue.min.js"></script>
+    <title>component-3</title>
+</head>
+<body>
+    <h1>component-3</h1>
+    <hr>
+    <div id="app">
+      <jspang></jspang>  
+    </div>
+    <script type="text/javascript">
+       var city={
+           template:`<div>Sichuan of China</div>`
+       }
+        var jspang = {
+            template:`<div>
+                    <p> Panda from China!</p>
+                    <city></city>
+            </div>`,
+            components:{
+                "city":city
+            }
+        }
+        var app=new Vue({
+            el:'#app',
+            components:{
+                "jspang":jspang
+            }
+        })
+    </script>
+</body>
+</html>

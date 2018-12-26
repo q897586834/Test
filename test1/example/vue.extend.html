@@ -9,15 +9,21 @@
 </head>
 <body>
 <div id="app">
-  <h1>v-</h1>
+  <h1>Vue.extend 扩展实例构造器</h1>
   <hr>
+  <div id="author"></div>
   <script>
-    var app = new Vue({
-      el:'#app',
-      data:{
-        message:'hello world'
+    var authorExtend = Vue.extend({
+      template:"<p><a :href='authorURL'>{{authorName}}</p>",
+      data:function(){
+        return{
+          authorName:'Sakura',
+          authorURL:"jspang.com"
+        }
       }
-    })  
+    })
+
+    new authorExtend().$mount('#author');
   </script>
 </div>
 

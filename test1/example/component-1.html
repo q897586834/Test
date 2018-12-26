@@ -9,13 +9,20 @@
 </head>
 <body>
 <div id="app">
-  <h1>v-</h1>
+  <h1>component-1</h1>
   <hr>
+  <sakura></sakura>
+  <panda></panda>
   <script>
+    Vue.component('sakura',{
+      template:`<div style="color:red">我是全局的sakura组件</div>`
+    })
     var app = new Vue({
       el:'#app',
-      data:{
-        message:'hello world'
+      components:{
+        "panda":{
+          template:`<div style="color:green">我是局部的panda组件</div>`      
+        }
       }
     })  
   </script>
