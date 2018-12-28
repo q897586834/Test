@@ -6,21 +6,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script type="text/javascript" src="../assets/js/vue.min.js"></script>
+  <script type="text/javascript" src="../assets/js/jquery-3.3.1.min.js"></script>
   <title>Document</title>
 </head>
 
 <body>
   <div id="app">
-    <h1>v-</h1>
+    <h1>example methods Demo</h1>
     <hr>
+    {{message}}
   </div>
   <script>
     var app = new Vue({
       el: '#app',
       data: {
         message: 'hello world'
-      }
+      },
+      mounted:function(){
+        $("#app").html('我是JQuery')
+      },
+      methods:{
+        add:function(){
+          console.log("调用的构造器内部的add方法")
+        }
+      },
     })
+
+    app.add()
   </script>
 
 

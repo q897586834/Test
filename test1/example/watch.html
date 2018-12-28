@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script type="text/javascript" src="../assets/js/vue.min.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <h1>watch Option</h1>
+    <hr>
+    <p>今日温度:{{wendu}}</p>
+    <p>穿衣建议:{{chuanyi}}</p>
+    <p><button @click="up">升高温度</button></p>
+    <p><button @click="down">降低温度</button></p>
+  </div>
+  <script>
+    var chuanyiarr=['T-shirt','夹克','棉袄']
+    var app = new Vue({
+      el: '#app',
+      data: {
+        wendu: 14,
+        chuanyi: '夹克'
+      },
+      methods: {
+        up: function () {
+          this.wendu += 5
+        },
+        down: function () {
+          this.wendu -= 5
+        },
+      },
+      // watch: {
+      //   wendu: function (newVal, oldVal) {
+      //     if (newVal >= 26) {
+      //       this.chuanyi = chuanyiarr[0];
+      //     } else if (newVal < 26 && newVal > 0) {
+      //       this.chuanyi = chuanyiarr[1]
+      //     } else {
+      //       this.chuanyi = chuanyiarr[2]
+      //     }
+      //   }
+      // },
+    })
+
+    app.$watch('wendu',function(newVal,oldVal){
+      if (newVal >= 26) {
+            this.chuanyi = chuanyiarr[0];
+          } else if (newVal < 26 && newVal > 0) {
+            this.chuanyi = chuanyiarr[1]
+          } else {
+            this.chuanyi = chuanyiarr[2]
+          }
+      
+    })
+  </script>
+
+
+</body>
+
+</html>
